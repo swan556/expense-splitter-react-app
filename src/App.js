@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import FriendList from "./Componants/FriendList.js";
+import SplitterTemplate from "./Componants/SplitterTemplate.js";
+// import SplitterTemplate from "./Componants/SplitterTemplate.js";
+export default function App() {
+  const [friends, setFriends] = useState([]);
 
-function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="container">
+        <div
+          style={{
+            gridColumn: "1/2",
+            gridRow: "1/2",
+            width: "100%",
+            height: "98%",
+            padding: "5px",
+            border: "4px solid brown",
+            borderRadius: "5px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <FriendList />
+        </div>
+        <div style={{ gridColumn: "1/2", gridRow: "1/2" }}>
+          <SplitterTemplate />
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
