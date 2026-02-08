@@ -9,6 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 code {
@@ -30,12 +31,53 @@ code {
   display: grid;
   gap: 10px;
   grid-template-columns: 30rem 25rem;
-  grid-template-rows: 45rem;
+  grid-template-rows: 40rem 5rem;
   border: 0px solid;
   border-radius: 10px;
 }
 .friendlist {
   width: 100%;
-  min-height: 50px;
-  background-color: rgb(237, 227, 209);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.friendcard {
+  display: grid;
+  width: 100%;
+  height: 60px;
+  grid-template-columns: 80% 1fr;
+  grid-template-rows: 50% 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid brown;
+  border-radius: 5px;
+  background-color: rgb(233, 210, 166);
+  margin-bottom: 3px;
+}
+
+.addfriend {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectbtn {
+  height: 30px;
+  width: 70px;
+  border-radius: 2px;
+}
+
+.selectbtn.notselected {
+  border: 4px solid rgb(195, 142, 89);
+  background-color: rgb(215, 163, 90);
+  border-bottom: 4px solid rgb(155, 117, 55);
+}
+.selectbtn.selected {
+  border: 4px solid rgb(153, 110, 67);
+  background-color: rgb(180, 135, 73);
+  border-bottom: 4px solid rgb(118, 87, 38);
 }
