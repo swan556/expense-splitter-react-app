@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-export default function FriendCard({ name, money, selected }) {
-  const [isOn, setIsOn] = useState(false);
-
+export default function FriendCard({ name, money, selected, handleSelection }) {
   return (
     <div className="friendcard">
       <h3
@@ -27,10 +23,10 @@ export default function FriendCard({ name, money, selected }) {
       </p>
       <button
         style={{ gridColumn: "2/3", gridRow: "1/3" }}
-        className={`selectbtn ${isOn ? "selected" : "notselected"}`}
-        onClick={() => setIsOn(!isOn)}
+        className={`selectbtn ${selected ? "selected" : "notselected"}`}
+        onClick={() => handleSelection({ name })}
       >
-        {`Select${isOn ? "ed" : ""}`}
+        {`Select${selected ? "ed" : ""}`}
       </button>
     </div>
   );

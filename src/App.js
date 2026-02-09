@@ -4,8 +4,11 @@ import SplitterTemplate from "./Componants/SplitterTemplate.js";
 import AddFriendMechanism from "./Componants/AddFriendMechanism.js";
 // import SplitterTemplate from "./Componants/SplitterTemplate.js";
 export default function App() {
-  // const [friends, setFriends] = useState([]);
-
+  const [friends, setFriends] = useState([]);
+  const [name, setName] = useState("");
+  function addNewCard({ name }) {
+    setFriends((fr) => [...fr, { name: `${name}`, money: 0, selected: false }]);
+  }
   return (
     <div className="App">
       <div className="container">
@@ -32,9 +35,13 @@ export default function App() {
               borderBottom: "2px solid brown",
             }}
           >
-            <FriendList />
+            <FriendList friends={friends} setFriends={setFriends} />
           </div>
-          <AddFriendMechanism />
+          <AddFriendMechanism
+            name={name}
+            setName={setName}
+            addNewCard={addNewCard}
+          />
         </div>
         <div style={{ gridColumn: "2/3", gridRow: "1/3" }}>
           <SplitterTemplate />
