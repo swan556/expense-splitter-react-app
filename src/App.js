@@ -11,10 +11,10 @@ export default function App() {
       <div className="container">
         <div
           style={{
+            position: "relative",
             gridColumn: "1/2",
             gridRow: "1/3",
             width: "100%",
-            height: "98%",
             padding: "5px",
             border: "4px solid brown",
             borderRadius: "5px",
@@ -26,7 +26,10 @@ export default function App() {
           <div
             style={{
               width: "100%",
+              overflowY: "auto",
               height: "90%",
+              border: "0px solid",
+              borderBottom: "2px solid brown",
             }}
           >
             <FriendList />
